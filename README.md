@@ -126,6 +126,47 @@ SELECT
 FROM repayment;
 ```
 
+##  Task 3 — Analyze Loans for US Clients
+
+##  Goal
+
+Get loans for USA clients with contracts signed on or after 2022-01-01.
+Requires joining `loan`, `contract`, and `client` tables.
+
+###  Solution
+
+```sql
+SELECT 
+    l.client_id, 
+    c.contract_date, 
+    l.principal_amount, 
+    l.loan_type
+FROM loan l
+JOIN contract c ON l.contract_id = c.contract_id
+JOIN client cl ON l.client_id = cl.client_id
+WHERE cl.country = 'USA' 
+  AND c.contract_date >= '2022-01-01';
+```
+
+##  Task 4 — Compare Average Interest Rates by Loan Type and Country
+
+##  Goal
+Calculate average interest rate grouped by `loan_type` and `country`.
+Requires joining `loan` and `client` tables.
+
+###  Solution
+
+
+```sql
+SELECT 
+    l.loan_type, 
+    c.country, 
+    AVG(l.interest_rate) AS avg_rate
+FROM loan l
+JOIN client c ON l.client_id = c.client_id
+GROUP BY l.loan_type, c.country;
+```
+
 ---
 
 ##  Key Lessons Learned
