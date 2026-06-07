@@ -1,5 +1,5 @@
 -- ============================================================
--- Task 1: Compare Average Interest Rates by Loan Type and Country
+-- Task 4: Compare Average Interest Rates by Loan Type and Country
 -- Goal: Calculate average interest rate grouped by loan_type and country. Requires joining loan and client tables.
 -- ============================================================
 
