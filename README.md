@@ -1,4 +1,4 @@
-# 🏦 EasyLoan Data Cleaning — DataCamp Practical Exam
+#  EasyLoan Data Cleaning — DataCamp Practical Exam
 
 EasyLoan offers loan services across USA, UK and Canada.
 The analytics team needed clean, reliable data before reporting.
@@ -6,7 +6,7 @@ This repo contains SQL solutions for all tasks.
 
 ---
 
-## 📁 Files
+##  Files
 
 | File | Description |
 |------|-------------|
@@ -15,14 +15,14 @@ This repo contains SQL solutions for all tasks.
 
 ---
 
-## 🗄️ Database Schema
+##  Database Schema
 
 **client** — client personal details  
 **repayment** — loan repayment records
 
 ---
 
-## ✅ Task 1 — Clean Client Table
+##  Task 1 — Clean Client Table
 
 ### Goal
 Return a cleaned `client` table with correct data types and standardized values.
@@ -34,7 +34,7 @@ Return a cleaned `client` table with correct data types and standardized values.
 | employment_status | `employed` or `unemployed` (lowercase only) |
 | country | `USA`, `UK`, or `CA` (uppercase only) |
 
-### ⚠️ Issues Faced
+###  Issues Faced
 
 **Issue 1 — Date Display Confusion**  
 DataLab renders dates as `YYYY-MM-DDThh:mm:ss.000` even when correctly cast as `DATE`.  
@@ -57,7 +57,7 @@ Simple `LOWER()` was not enough — `Full-time` and `Part-time` needed explicit 
 **Issue 3 — Assuming only NULL = missing**  
 Non-standard representations like `''`, `'NA'`, `'none'` were not caught by `IS NULL` alone.
 
-### ✅ Final Solution
+###  Final Solution
 
 ```sql
 SELECT 
@@ -79,7 +79,7 @@ SELECT
 FROM client;
 ```
 
-### 🔍 Debugging Query Used
+###  Debugging Query Used
 
 ```sql
 -- Always explore distinct values BEFORE cleaning
@@ -89,7 +89,7 @@ SELECT DISTINCT country, COUNT(*) FROM client GROUP BY 1;
 
 ---
 
-## ✅ Task 2 — Fix Missing Repayment Channels
+##  Task 2 — Fix Missing Repayment Channels
 
 ### Goal
 Fill missing `repayment_channel` values based on amount:
@@ -99,10 +99,10 @@ Fill missing `repayment_channel` values based on amount:
 | amount > 4000 | `bank account` |
 | amount < 1000 | `mail` |
 
-### ⚠️ Issues Faced
+###  Issues Faced
 Missing values were not only `NULL` — they included `''`, `'NA'`, `'none'`, `'missing'` etc.
 
-### ✅ Final Solution
+###  Final Solution
 
 ```sql
 SELECT 
@@ -128,7 +128,7 @@ FROM repayment;
 
 ---
 
-## 🔑 Key Lessons Learned
+##  Key Lessons Learned
 
 1. **Never assume missing = NULL only** — always check for `''`, `'NA'`, `'none'`, `'missing'`
 2. **Always explore distinct values first** before writing cleaning logic
