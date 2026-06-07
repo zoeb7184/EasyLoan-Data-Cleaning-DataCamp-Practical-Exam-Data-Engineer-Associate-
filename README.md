@@ -1,8 +1,8 @@
 # 🏦 EasyLoan Data Cleaning & Analysis 
-**A DataCamp Data Analyst Certification Practical Exam Project by Zoeb Ali Khan**
+**A DataCamp Data Engineer Associate Certification Practical Exam Project by Zoeb Ali Khan**
 
 ## 📖 About This Project
-This project is part of the **DataCamp Data Analyst Certification Practical Exam**. The goal was to clean, prepare, and analyze loan data for EasyLoan, a financial services company offering personal loans, car loans, and mortgages across the USA, the UK, and Canada. 
+This project is part of the **DataCamp Data Engineer Associate Certificate Practical Exam**. The goal was to clean, prepare, and analyze loan data for EasyLoan, a financial services company offering personal loans, car loans, and mortgages across the USA, the UK, and Canada. 
 
 > **Note on the process:** This was not a straightforward exam. I spent considerable time studying SQL data cleaning techniques, reading through documentation, and debugging edge cases that are not obvious at first glance. The exam tested real-world skills—not just writing queries, but understanding *why* data is dirty and how to handle it systematically.
 
